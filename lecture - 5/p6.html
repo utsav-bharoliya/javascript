@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let phy = (parseInt(prompt("Enter Marks For phy : ")));
+        let che = (parseInt(prompt("Enter Marks For che : ")));
+        let bio = (parseInt(prompt("Enter Marks For bio : ")));
+        let math = (parseInt(prompt("Enter Marks For math : ")));
+        let com = (parseInt(prompt("Enter Marks For Com : ")));
+
+        let total = phy + che + bio + math + com;
+        let per = (total / 500) * 100;
+
+        if (per >= 90) {
+            console.log("grade A");
+        } else if (per >= 80) 
+        {
+            console.log("grade B");
+        } else if (per >= 70)
+         {
+            console.log("grade C");
+        } else if (per >= 60)
+        {
+            console.log("grade D");
+        } else if (per >= 50) 
+        {
+            console.log("grade E");
+        } else {
+            console.log("grade F");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let a = (parseInt(prompt("Enter the number of a : ")));
+        let b = (parseInt(prompt("Enter the number of b : ")));
+        let c = (parseInt(prompt("Enter the number of c : ")));
+        let d = (parseInt(prompt("Enter the number of d : ")));
+        let e = (parseInt(prompt("Enter the number of e : ")));
+        let f = (parseInt(prompt("Enter the number of f : ")));
+
+        if (a > b) {
+            if (a > c) {
+                if (a > d) {
+                    if (a > e)
+                        if (a > f) {
+                            document.write("a is max");
+                        }
+                        else {
+                            document.write("f is max");
+                        }
+                    else {
+                        if(e>f){
+                            document.write("e is max")
+                        }
+                        else{
+                            document.write("f is max")
+                        }
+                    }
+                }
+                else {
+                    if(d>e){
+                        if(d>f){
+                            document.write("d is max")
+                        }
+                        else{
+                            document.write("f is max")
+                        }
+                    }
+                    else{
+                        document.write("e is max")
+                    }
+                }
+            }
+            else {
+                if (c > d) {
+                    if (c > e) {
+                        if (c > f) {
+                            document.write("c is max");
+                        }
+                        else {
+                            document.write("f is max");
+                        }
+                    }
+                    else {
+                        document.write("e is max");
+                    }
+                }
+                else {
+                   document.write("d is max")
+                }
+            }
+        }
+        else {
+            if (b > c) {
+                if (b > d) {
+                    if (b > e) {
+                        if (b > f) {
+                            document.write("b is max");
+                        }
+                        else {
+                            document.write("f is max");
+                        }
+                    }
+                    else {
+                        document.write("e is max");
+                    }
+                }
+                else {
+                    document.write("d is max");
+                }
+            }
+            else {
+                document.write("c is max");
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

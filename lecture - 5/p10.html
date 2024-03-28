@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let a = (parseInt(prompt("Enter your value for A : ")));
+        let b = (parseInt(prompt("Enter your value for B : ")));
+        let choice = prompt("[+, -, *, /] : ");
+        let ans;
+
+        switch (choice) {
+            case '+':
+                ans = a + b;
+                console.log("a + b = " + ans);
+                break;
+            case '-':
+                ans = a - b;
+                console.log("a - b = " + ans);
+                break;
+            case '*':
+                ans = a * b;
+                console.log("a * b = " + ans);
+                break;
+            case '/':
+               
+            if (b !== 0) {
+                ans = a / b;
+                console.log("a / b = " + ans);
+            } else {
+                console.log("error");
+            }
+            break;
+            default:
+                console.log("Invalid operation!");
+        } 
+    </script>
+
+</body>
+</html>

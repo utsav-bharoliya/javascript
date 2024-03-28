@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let a = (parseInt(prompt("Enter the number of a : ")));
+        let b = (parseInt(prompt("Enter the number of b : ")));
+        let c = (parseInt(prompt("Enter the number of c : ")));
+        let d = (parseInt(prompt("Enter the number of d : ")));
+        let e = (parseInt(prompt("Enter the number of e : ")));
+
+        if(a > b){
+		if(a > c){
+			if(a > d){
+				if(a > e){
+					document.write("a is max");
+				}
+				else{
+					document.write("e is max");
+				}
+			}
+			else{
+				document.write("d is max");
+			}			
+		}
+		else{
+			if(c > d){
+				if(c > e){
+					document.write("c is max");
+				}
+				else{
+					document.write("e is max");
+				}
+			}
+			else{
+				if(d > e){
+					document.write("d is max");
+				}
+				else{
+					document.write("e is max");
+				}
+			}
+		}
+	}
+	else{
+		if(b > c){
+			if(b > d){
+				if(b > e){
+					document.write("b is max");9
+				}
+				else{
+					document.write("e is max");
+				}
+			}
+			else{
+				document.write("d is max");
+			}
+		}
+		else{
+			document.write("c is max");
+		}
+	}
+	
+
+
+
+    </script>
+
+</body>
+</html>
