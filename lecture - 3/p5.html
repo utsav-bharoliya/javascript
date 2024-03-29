@@ -6,17 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-   
+    
     <script>
-        let n = (parseInt(prompt("Enter your number : ")));
 
-        if(n > 0) {
-            console.log("positive");
-        }else if (n < 0) {
-            console.log("negative");
-        }else {
-            console.log("zero");
+        let year = (parseInt(prompt("Enter the year : ")));
+
+        if (year % 4 === 0) {
+           console.log("leap year");
+        } else {
+            console.log("not leap year");
         }
+
     </script>
 
 </body>
