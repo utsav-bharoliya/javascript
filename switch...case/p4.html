@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let burgur, pizza, passta;
+        let choice = parseInt(prompt("enter the choice : "))
+        console.log("press 1 burgur...")
+        console.log("press 2 pizza...")
+        console.log("press 3 passta...")
+
+        switch(choice){
+            case 1:
+                console.log("1.rosted burger") 
+                console.log("2.tanduri burger")      
+                console.log("3.chpati burger")                
+                    
+                let burger = (parseInt(prompt("Enter your Burgers for Order..!")));
+
+                switch(burgur){
+                    case 1:
+                        console.log("you orderd rosted burger")
+                        break;
+                    case 2:
+                        console.log("you orderd tanduri burger")
+                        break;
+                    case 3:
+                        console.log("you orderd chpati burger")
+                        break;
+                    default:
+                        console.log("please, invalid choice...")   
+                        break;
+                }
+            case 2:
+                console.log("1.machali pizza") 
+                console.log("2.pani pizza")      
+                console.log("3.chpak pizza")   
+
+                let pizza = (parseInt(prompt("Enter your pizza for Order..!")));
+    
+                switch(pizza){
+                    case 1:
+                        console.log("you orderd machali pizza")
+                        break;
+                    case 2:
+                        console.log("you orderd pani pizza")
+                        break;
+                    case 3:
+                        console.log("you orderd chpak pizza")
+                        break;
+                    default:
+                        console.log("please, Invalid choice...")
+                        break;   
+                }
+             case 3:
+                console.log("1.loosemotion pasta") 
+                console.log("2.kabjiyat pasta")      
+                console.log("3.masaa pasta")
+
+                let pasta = (parseInt(prompt("Enter your pasta for Order..!")));
+
+                switch(burgur){
+                    case 1:
+                        console.log("you orderd loosemotion pasta")
+                        break;
+                    case 2:
+                        console.log("you orderd kabjiyat pasta")
+                        break;
+                    case 3:
+                        console.log("you orderd masaa pasta")
+                        break;
+                    default:
+                        console.log("please, valid choice...")   
+                        break;
+                }
+                default:
+                    console.log("please, valid choice...")
+                    break;
+
+        }
+    </script>
+</body>
+</html>
