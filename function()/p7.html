@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           function haselyo(a, b, c) {
+            if (a > b) {
+                if (a > c) {
+                    return "a is max : " + a;
+                } else {
+                    return "b is max : " + c;
+                }
+            } else {
+                if (b > c) {
+                    return "b is max : " + b;
+                } else {
+                    return "c is max : " + c;
+                }
+            }
+        }
+        let a = parseInt(prompt("Enter the Number of a : "))
+        let b = parseInt(prompt("Enter the Number of b : "))
+        let c = parseInt(prompt("Enter the Number of c : "))
+        console.log(haselyo(a, b, c));
+    </script>
+</body>
+</html>

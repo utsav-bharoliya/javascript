@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function lyo(){
+            if(a > b){
+                if(a > c){
+                    if(a > d){
+                        console.log("a is max")
+                    }else{
+                        if(c > d){
+                            console.log("c is max")
+                        }else{
+                            console.log("d is max")
+                        }
+                    }
+                }else{
+                    console.log("c is max")
+                }
+            }else{
+                if(b > c){
+                    if(b > d){
+                        console.log("b is max")
+                    }else{
+                        console.log("d is max")
+                    }
+                }else{
+                    if(c > d){
+                        console.log("c is max")
+                    }else{
+                        console.log("d is max")
+                    }
+                }
+            }
+        }
+        let a = parseInt(prompt("Enter The Number of a : "))
+        let b = parseInt(prompt("Enter The Number of b : "))
+        let c = parseInt(prompt("Enter The Number of c : "))
+        let d = parseInt(prompt("Enter The Number of d : "))
+
+        console.log(lyo())
+    </script>
+</body>
+</html>

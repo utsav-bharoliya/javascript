@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        function bovkari(a, b, choice) {
+            switch (choice) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    return a / b;
+
+                default:
+                    return "Invalid Choice.";
+            }
+        }
+        let choice = prompt("Select [+, -, *, /] :");
+        let a = parseInt(prompt("Enter Your Number a: "))
+        let b = parseInt(prompt("Enter Your Number b: "))
+
+        console.log("Answer : " + bovkari(a, b, choice));
+    </script>
+</body>
+</html>

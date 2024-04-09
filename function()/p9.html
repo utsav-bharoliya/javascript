@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function basho(total) {
+            if (total === 180) {
+                return "The angles form a valid triangle.";
+            } else {
+                return "The angles do not form a valid triangle.";
+            }
+        }
+        let a = parseFloat(prompt("Enter the first angle : "));
+        let b = parseFloat(prompt("Enter the second angle : "));
+        let c = parseFloat(prompt("Enter the third angle : "));
+        let total = a + b + c;
+        
+        console.log("Answer : " + basho(total) );
+     </script>
+<body> 
+</html>
