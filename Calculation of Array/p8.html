@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+    <script>
+        var arr = [1, -2, -45, -54, 13];
+
+        document.write("Original array : " + arr);
+
+        function Negative(Value) {
+            return Value < 0;
+        }
+
+        var negativeElement = arr.filter(Negative);
+
+        document.write(" <br> Negative Elements :  " + negativeElement );
+    </script>
+</body>
+
+</html>
