@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2 id="name"></h2>
+    <h2 id="age"></h2>
+    <h2 id="city"></h2>
+    <h2 id="lol"></h2>
+
+    <script>
+        var obj = {
+            name: 'lalanva',   
+            age: 30,
+            state: 'up',
+            lol : {
+                areya: ['mirzapur', 'johnpur']
+            }
+        };
+        
+        document.getElementById('name').innerHTML = `Name = ${obj.name}`;
+        document.getElementById('age').innerHTML = `Age = ${obj.age}`;
+        document.getElementById('city').innerHTML = `state = ${obj.city}`;
+        document.getElementById('lol').innerHTML = `areya = ${obj.lol.areya[0]}`;
+    </script>
+</body>
+</html>
