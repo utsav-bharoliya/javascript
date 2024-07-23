@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div align="center">
+        <h2>Form Validtion</h2> 
+        <form>
+            Name : <input type="text" id="name">
+            <br>
+            <span id="nameerr" style="color:red ;"></span>
+            <br><br>
+            Email : <input type="text" id="email">
+            <br>
+            <span id="emailerr" style="color:red ;"></span>
+            <br><br>
+            <p id="success" style="color: green;"></p>
+            <button type="button" onclick="formval()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const formval = () => {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let check = true
+            
+            if(!name){
+                document.getElementById('nameerr').innerHTML='Name is required'
+                check = false;
+            }
+            if(!email){
+                document.getElementById('emailerr').innerHTML = 'email is required'
+                check = false
+            }else{
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            }
+            
+            if(check == true){
+                document.getElementById('success').innerHTML = "Form is Submit";
+            }
+            document.getElementById('name').value = ""
+            document.getElementById('email').value = ""
+        }
+    </script>
+    
+</body>
+   
+</html>
