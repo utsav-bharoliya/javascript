@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <link rel="stylesheet" href="asstes/css/style.css">
+</head>
+
+<body>
+    <section align="center">
+        <div>
+            <h1>Counter App</h1>
+            <h4 id="count">0</h4>
+
+            <button type="button" id="-">-</button>
+            <button type="button" id="reset">Reset</button>
+            <button type="button" id="+" style="margin-right: 0;">+</button>
+        </div>
+    </section>
+
+
+    <script>
+        let count = 0;
+
+        document.getElementById("-").onclick = function () {
+            count -= 1;
+            document.getElementById("count").innerHTML = count;
+        }
+
+        document.getElementById("reset").onclick = function () {
+            count = 0;
+            document.getElementById("count").innerHTML = count;
+        }
+
+        document.getElementById("+").onclick = function () {
+            count += 1;
+            document.getElementById("count").innerHTML = count;
+        }
+    </script>
+</body>
+
+</html>
