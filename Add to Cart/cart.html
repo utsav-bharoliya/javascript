@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark d-flex">
+        <a class="navbar-brand" href="#"><strong>Shopping Cart</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: flex; justify-content: end;">
+            <ul class="navbar-nav me-auto">
+            </ul>
+            <form class="d-flex my-2 my-lg-0">
+                <input class="form-control me-2" type="search" id="search_field" placeholder="Search"
+                    aria-label="Search">
+            </form>
+            <button style="margin: 10px;" type="button" class="btn btn-success my-2 my-sm-0">
+                <a href="index.html"><img src="/Add to Cart/img/home.png" alt="" width="20"></a>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center py-3" style="color: #848282;">Your Purchase Cart</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Srno</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart"></tbody>
+            </table>
+            <h1 id="ftotal"></h1>
+            <a href="index.html" class="btn"
+                style="background-color:#a3a3a3; color: #fff; font-size: 20px; font-weight: 700;">Continue Shopping</a>
+        </div>
+    </div>
+
+    <script>
+        const getCart = () => {
+            let allcart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (allcart.length === 0) {
+                document.getElementById('cart').innerHTML = '<tr><td colspan="7" class="text-center">Cart is empty</td></tr>';
+                document.getElementById('ftotal').innerHTML = '';
+                return;
+            }
+
+            let tbl = "";
+            let sum = 0;
+            allcart.forEach((val, index) => {
+                sum += val.price * val.quantity;
+                tbl += `
+                    <tr>
+                        <td>${index + 1}.</td>
+                        <td><img src="${val.image}" width="100"/></td>
+                        <td>${val.name}</td>
+                        <td>${val.price}</td>
+                        <td>
+                            <input class="form-control w-25" type="number" id="qty_${val.id}" onchange="editQty(${val.id})" value="${val.quantity}"/>
+                        </td>
+                        <td>${val.price * val.quantity}</td>
+                        <td>
+                            <a href="#" onclick="deleteCart(${val.id})"><img src="/Add to Cart/img/bin.png"  alt="" width="20"></a>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('cart').innerHTML = tbl;
+            document.getElementById('ftotal').innerHTML = `Total: ₹${sum}`;
+        }
+        getCart();
+
+        const editQty = (id) => {
+            let qty = document.getElementById(`qty_${id}`).value;
+            let alldata = JSON.parse(localStorage.getItem('cart'));
+            alldata.forEach(val => {
+                if (val.id === id) {
+                    val.qty = parseInt(qty);
+                }
+            });
+            localStorage.setItem('cart', JSON.stringify(alldata));
+            alert("Cart Updated");
+            getCart();
+        }
+
+        const deleteCart = (id) => {
+            let alldata = JSON.parse(localStorage.getItem('cart'));
+            alldata = alldata.filter(item => item.id !== id);
+            localStorage.setItem('cart', JSON.stringify(alldata));
+            alert("Product Deleted");
+            getCart();
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

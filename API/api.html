@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 0.2px solid black;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <h2>Products</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>thumbnail</th>
+                    <th>name</th>
+                    <th>tags</th>
+                    <th>reviews</th>
+                    <th>images</th>
+                </tr>
+            </thead>
+            <tbody id="products"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const getAllProducts = () => {
+            fetch('https://dummyjson.com/products')
+                .then(res => res.json())
+                .then(data => {
+                    let tbl = "";
+                    let products = data.products;
+                    products.forEach(p => {
+                        tbl += `
+                            <tr>
+                                <td>${p.id}</td>
+                                <td><img src="${p.thumbnail}" width="100" height="100"></td>
+                                <td>${p.title}</td>
+                                <td>
+                                    <table>
+                                        ${p.tags.map(tags => `<tr><td>${tags}</td></tr>`).join('')}
+                                    </table>
+                                </td>
+                                <td>
+                                    <table width="500">
+                                        <thead>
+                                            <tr>
+                                                <th>name</th>
+                                                <th>comment</th>
+                                                <th>rating</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            ${p.reviews.map(review => `
+                                                <tr align="center">
+                                                    <td>${review.reviewName}</td>
+                                                    <td>${review.comment}</td>
+                                                    <td>${review.rating}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        ${p.images.map(image => `
+                                            <tr>
+                                                <td><img src="${image}" width="100" height="100"></td>
+                                            </tr>
+                                        `).join('')}
+                                    </table>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                    document.getElementById('products').innerHTML = tbl;
+                });
+        }
+
+        getAllProducts();
+    </script>
+</body>
+
+</html>
